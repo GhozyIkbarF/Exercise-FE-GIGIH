@@ -1,0 +1,31 @@
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+img{
+    border-radius:15px;
+}
+form{
+
+    margin-top: 20px;
+    width: 300px;
+    background: #fff;
+    height: auto;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.btn-submit{
+    background-color: lightblue;
+    border-radius: 0 8px 8px 0;
+}
+.btn-submit:hover{
+    filter: brightness(0.8);
+}
+.btn-submit,input{
+    padding: 10px;
+}
+input{
+    border-radius: 8px 0 0 8px;
+}
