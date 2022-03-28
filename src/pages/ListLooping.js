@@ -132,8 +132,9 @@ export default function ListLooping() {
         flexDirection: 'row',
         flexWrap: 'wrap',
       }} className='wrapper'>
-        {data.filter(item => item.rating === 'g').map(item => (
+        {data.filter(item => item.rating === 'g').map((item, index) => (
             <Llg 
+            key={index}
             id={item.id}
             title={item.title}
             url_image={item.url}
