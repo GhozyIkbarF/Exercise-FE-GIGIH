@@ -4,9 +4,9 @@ import axios from 'axios'
 
 
 const Data = () => {
-    const [data, setData] = useState();
+    const [data, setData] = useState([]);
 
-    const url = '`http://api.giphy.com/v1/gifs/search'
+    const url = `http://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_GIPHY_KEY}&limit=12`
 
     const getAllNotes = () => {
         axios.get(`${url}`)

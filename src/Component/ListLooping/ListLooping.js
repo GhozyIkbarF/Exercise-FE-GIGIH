@@ -7,7 +7,7 @@ export default function ListLooping({rating,url_image, title, id, url_source}) {
     <div className="col" key={id}>
        <img src={url_image} alt={title} />
        <p className='title'>{title}</p>
-       <p>rating: {rating}</p>
+       {/* <p>rating: {rating}</p> */}
        <a className='btn' href={url_source}>click</a>
     </div>
   )
