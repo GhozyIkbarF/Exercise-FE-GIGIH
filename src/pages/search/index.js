@@ -1,9 +1,9 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import axios from 'axios'
 import './index.css'
-import { Component } from 'react';
 import Gifs from '../../Component/ListLooping/ListLooping'
+import SearchBar  from '../../Component/searchBar/index'
+
 
 const Sample = () => {
   const [gifs, setGifs] = useState([]);
@@ -22,15 +22,14 @@ const Sample = () => {
     setGifs(gifs.data);
   };
 
-  console.log(gifs)
+
+
   return (
     <div>
-      <form action="">
-        <input type="text"
-          onChange={getText}
-          placeholder='search...'
-          required />
-      </form>
+      <SearchBar
+        onChange={getText}
+        onSubmit={getGifs}
+      />
       
       <main style={{
         display: 'flex',
@@ -48,6 +47,118 @@ const Sample = () => {
     </div>
   )
 }
+
+
+// const sendFromNetworkCall = (data) => console.log(data);
+
+// const Sample = () => {
+//   const [form, setForm] = useState({
+//     myText1: "",
+//     myText2: "",
+//     myText3: "",
+//     myText4: ""
+//   });
+
+//   const handleForm = (e) => {
+//     e.preventDefault();
+//     sendFromNetworkCall(form);
+//   };
+
+//   const handleMyText = (e) => {
+//     const { name, value } = e.target;
+//     setForm({ ...form, [name]: value });
+//   };
+
+//   return (
+//     <>
+//       <h1>Form</h1>
+//       <form onSubmit={handleForm}>
+//         <label htmlFor="myText1">Text 1</label>
+//         <input
+//           id="myText1"
+//           type="text"
+//           name="myText1"
+//           value={form.myText1}
+//           onChange={handleMyText}
+//           required
+//         />
+//         <label htmlFor="myText2">Text 2</label>
+//         <input
+//           id="myText2"
+//           type="text"
+//           name="myText2"
+//           value={form.myText2}
+//           onChange={handleMyText}
+//           required
+//         />
+//         <label htmlFor="myText3">Text 3</label>
+//         <input
+//           id="myText3"
+//           type="text"
+//           name="myText3"
+//           value={form.myText3}
+//           onChange={handleMyText}
+//           required
+//         />
+//         <label htmlFor="myText4">Text 4</label>
+//         <input
+//           id="myText4"
+//           type="text"
+//           name="myText4"
+//           value={form.myText4}
+//           onChange={handleMyText}
+//           required
+//         />
+//         <button type="submit">Submit</button>
+//       </form>
+//     </>
+//   );
+// };
+
+
+// const Sample = () => {
+//   const [gifs, setGifs] = useState([]);
+//   const [text, setText] = useState('');
+
+//   useEffect(() => getGifs(), [text]);
+
+//   const getText = (e) => {
+//     setText(e.target.value);
+//   }
+
+//   const getGifs = async () => {
+//     const gifs = await fetch(
+//       `http://api.giphy.com/v1/gifs/search?q=${text}&api_key=${process.env.REACT_APP_GIPHY_KEY}&limit=12`
+//     ).then((response) => response.json());
+//     setGifs(gifs.data);
+//   };
+
+//   console.log(gifs)
+//   return (
+//     <div>
+//       <form action="">
+//         <input type="text"
+//           onChange={getText}
+//           placeholder='search...'
+//           required />
+//       </form>
+      
+//       <main style={{
+//         display: 'flex',
+//         flexWrap: 'wrap',
+//         justifyContent: 'center',
+//         padding: '20px'
+//       }}>
+//         {gifs.map((gif) => (
+//           <Gifs key={gif.id}
+//            title={gif.title}
+//            url_image={gif.images.fixed_height.url}
+//            url_source={gif.bitly_gif_url} />
+//         ))}
+//       </main>
+//     </div>
+//   )
+// }
 
 // const Sample = () => {
 //   const [counter, setCounter] = useState(0)
